@@ -124,7 +124,7 @@ h1 {
 
 .invitation-photo {
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   display: block;
   margin: 20px auto;
   border-radius: 20% 50% 30% 50%; /* нестандартна форма */
