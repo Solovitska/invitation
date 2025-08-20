@@ -1,0 +1,153 @@
+:root {
+  --primary: #001f3f;
+  --secondary: #d4af37;
+  --accent: #c1121f;
+  --radius: 16px;
+  --transition: 0.4s ease;
+}
+
+* { box-sizing: border-box; transition: var(--transition); }
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+
+/* Відео фон */
+#bg-video {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.6);
+}
+
+/* Карточка запрошення */
+.invitation {
+  background: rgba(69,67,89,0.85);
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  color: #fff;
+  width: 350px;
+  animation: slideIn 1s ease-out forwards;
+  transform: translateY(50px);
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+  width: 350px;
+
+}
+
+@keyframes slideIn {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+h1 {
+  color: var(--secondary);
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  color: #ffe066;
+}
+
+.date {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ffe066;
+}
+
+.message {
+  margin: 20px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+/* Кнопка */
+.btn {
+  background: linear-gradient(135deg, #5f740f, #5c1da9);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: rgba(255,255,255,0.2);
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+
+.btn:hover::before {
+  top: 0; left: 0;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Конфетті */
+.confetti {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  animation: fall 5s linear infinite;
+  z-index: 1;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10px) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.invitation-photo {
+  width: 100%;
+  max-width: 150px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 20% 50% 30% 50%; /* нестандартна форма */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-radius 0.4s ease;
+  object-fit: cover; /* обрізає зображення по центру */
+  filter: grayscale(0.5) contrast(1.2); /* напівчорно-біле з підвищеним контрастом */
+}
+
+/* Ефект при наведенні */
+.invitation-photo:hover {
+  transform: scale(1.05) rotate(3deg); /* збільшення та обертання */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  border-radius: 50% 30% 50% 20%; /* зміна форми */
+  filter: grayscale(0) contrast(1.5); /* повернення до кольору з підвищеним контрастом */
+}
+.location a {
+  color: #ffd700;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.location a:hover {
+  text-decoration: underline;
+  color: #fff176;
+}
